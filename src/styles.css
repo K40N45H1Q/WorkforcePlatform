@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+:root {
+    --bg: #0D1117;
+    --text: #EDE9FE;
+    --accent: #7C3AED;
+    --card-bg: rgba(31, 41, 55, 0.9);
+    --card-size: 23rem;
+    --z-offset: -30rem;
+    --x-offset: -5rem;
+    --blur-size: 1rem;
+    --green: #00E676;
+    --darkest: #0D1117;
+    --darker: #161B22;
+    --dark: #1E232B;
+    --white: #ffffff;
+    --gray: #A6AD87;
+    --header-height: 80px;
+    --color-bg: #0a0a0a;
+    --color-surface: #141414;
+    --color-text: #ffffff;
+    --color-text-muted: #a0a0a0;
+    --color-accent: #00E676;
+    --color-accent-dim: rgba(0, 230, 118, 0.1);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --container-max: 1200px;
+    --container-padding: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Science Gothic", sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+::selection {
+  background: var(--green);
+  color: var(--white);
+}
