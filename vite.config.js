@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base: '/K40N45H1Q/WorkforcePlatform/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
