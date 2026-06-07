@@ -25,6 +25,7 @@
     --color-border: rgba(255, 255, 255, 0.08);
     --container-max: 1200px;
     --container-padding: 24px;
+    --alpha-background: rgba(10, 10, 10, 0.9);
 }
 
 * {
@@ -41,4 +42,26 @@ body {
 ::selection {
   background: var(--green);
   color: var(--white);
+}
+
+html, body, #app {
+  height: 100%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 5px;
+  border: 2px solid #1a1a1a;
 }

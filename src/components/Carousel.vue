@@ -1,47 +1,49 @@
 <template>
-  <div 
-    class="carousel" 
-    @touchstart.passive="handleTouchStart" 
-    @touchend.passive="handleTouchEnd"
-  >
-    <button 
-      class="nav left" 
-      @click="goTo(activeIndex - 1)" 
-      :style="{ display: activeIndex > 0 ? 'flex' : 'none' }"
-      aria-label="Previous card"
-    >
-      <span class="nav-icon">&lt;</span>
-    </button>
-    
+  <div class="wrapper">
     <div 
-      v-for="(card, i) in cardsData" 
-      :key="i" 
-      class="card-container" 
-      :style="getCardStyle(i)"
-      @click="goTo(i)"
+      class="carousel" 
+      @touchstart.passive="handleTouchStart" 
+      @touchend.passive="handleTouchEnd"
     >
-      <div class="card">
-        <div class="card-content">
-          <h2 class="title">{{ card.title }}</h2>
-          <h3>Includes:</h3>
-          <ul class="features-list">
-            <li v-for="(feature, idx) in card.features" :key="idx">
-              {{ feature }}
-            </li>
-          </ul>
+      <button 
+        class="nav left" 
+        @click="goTo(activeIndex - 1)" 
+        :style="{ display: activeIndex > 0 ? 'flex' : 'none' }"
+        aria-label="Previous card"
+      >
+        <span class="nav-icon">&lt;</span>
+      </button>
+      
+      <div 
+        v-for="(card, i) in cardsData" 
+        :key="i" 
+        class="card-container" 
+        :style="getCardStyle(i)"
+        @click="goTo(i)"
+      >
+        <div class="card">
+          <div class="card-content">
+            <h2 class="title">{{ card.title }}</h2>
+            <h3>Includes:</h3>
+            <ul class="features-list">
+              <li v-for="(feature, idx) in card.features" :key="idx">
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+          <button class="price-btn">{{ card.price }}</button>
         </div>
-        <button class="price-btn">{{ card.price }}</button>
       </div>
+  
+      <button 
+        class="nav right" 
+        @click="goTo(activeIndex + 1)" 
+        :style="{ display: activeIndex < count - 1 ? 'flex' : 'none' }"
+        aria-label="Next card"
+      >
+        <span class="nav-icon">&gt;</span>
+      </button>
     </div>
-
-    <button 
-      class="nav right" 
-      @click="goTo(activeIndex + 1)" 
-      :style="{ display: activeIndex < count - 1 ? 'flex' : 'none' }"
-      aria-label="Next card"
-    >
-      <span class="nav-icon">&gt;</span>
-    </button>
   </div>
 </template>
 
@@ -52,17 +54,17 @@ const cardsData = [
   {
     title: 'Basic',
     features: ['Up to 5 job postings', 'Basic search visibility', 'Receive applications', 'Employer profile'],
-    price: '59€ / month'
+    price: '59€ per month'
   },
   {
     title: 'Standard',
     features: ['Everything from Basic', 'Social media posts', 'Up to 10 job postings'],
-    price: '89€ / month'
+    price: '89€ per month'
   },
   {
     title: 'Pro',
     features: ['Everything from Standard', 'Priority in search', 'Up to 20 job postings', 'VIP support'],
-    price: '129€ / month'
+    price: '129€ per month'
   }
 ]
 
@@ -114,6 +116,14 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
 </script>
 
 <style scoped>
+.wrapper {
+  touch-action: none;
+  height: calc(100% - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .carousel {
   --card-size: clamp(280px, 35vw, 400px);
   --z-offset: -24rem;
@@ -149,20 +159,23 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
   width: 100%;
   height: 100%;
   padding: clamp(1rem, 4vw, 1rem);
-  background: var(--color-bg);
+  background: rgba(10, 10, 10, 1);
   border-radius: clamp(0.75rem, 2vw, 1rem);
   color: var(--text);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: left;
-  border: 2px solid var(--accent);
-  box-shadow: 0px 0px 15px 5px rgba(0, 230, 119, 0.3);
+  border: solid 2px rgba(0, 230, 119, 0.9);
+  box-shadow: 0px 0px 15px 5px rgba(0, 230, 119, 0.15);
   box-sizing: border-box;
 }
 
 .card-content {
   text-align: justify;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
 }
 
 .card .title {
@@ -171,10 +184,10 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
   font-weight: bold;
   margin: 0 0 0.5em;
   color: var(--accent);
+  margin-bottom: 3%;
 }
 
 .card h3 {
-  margin-bottom: 0.5em;
   color: var(--accent);
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
 }
@@ -187,7 +200,7 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
 
 .features-list li {
   margin-bottom: 0.4em;
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.4;
   opacity: 0.9;
   position: relative;
@@ -209,14 +222,16 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
   border: 0;
   border-radius: clamp(6px, 2vw, 10px);
   background: var(--accent);
-  color: var(--text);
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #ffffff;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  letter-spacing: 2px;
+  font-weight: 700;
+  paint-order: stroke fill;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .price-btn:hover {
@@ -234,13 +249,13 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
 }
 
 .nav {
-  color: var(--text);
+  color: var(--accent);
   font-size: clamp(2.5rem, 8vw, 5rem);
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 50%;
+  top: 65%;
   z-index: 10;
   cursor: pointer;
   user-select: none;

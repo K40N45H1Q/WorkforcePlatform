@@ -92,7 +92,7 @@
 .home {
   width: 100%;
   min-height: 100%;
-  background-color: var(--color-bg);
+  background-color: transparent;
   color: var(--color-text);
   position: relative;
   overflow-x: hidden;
@@ -129,7 +129,7 @@
   color: var(--color-accent);
   padding: 8px 16px;
   border-radius: 100px;
-  font-size: clamp(12px, 2vw, 15px);;
+  font-size: clamp(11px, 2vw, 15px);;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -146,7 +146,7 @@
 
 .hero-title {
   margin: 0;
-  font-size: clamp(30px, 5vw, 64px);
+  font-size: clamp(29px, 5vw, 64px);
   line-height: 1.1;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -210,20 +210,19 @@
 }
 
 .btn-primary:hover {
-  box-shadow: 0 8px 30px rgba(0, 230, 118, 0.35);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 230, 119, 0.3);
 }
 
 .btn-ghost {
-  background: transparent;
+  background: var(--color-bg) !important;
   color: var(--color-text);
-  border: 1.5px solid var(--color-border);
+  border: 2px solid rgba(0, 230, 119, 0.3) !important;
 }
 
 .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 230, 119, 0.20);
+  border: 2px solid rgba(0, 230, 119) !important;
 }
 
 .btn-arrow {
