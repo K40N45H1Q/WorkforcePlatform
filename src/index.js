@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from './components/HomeView.vue'
 import Carousel from './components/Carousel.vue'
-import Net from './components/Net.vue'
+import About from './layouts/About.vue'
+import Resources from './layouts/Resources.vue'
 
 const routes = [
   {
@@ -10,19 +11,24 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/employers',
-    name: 'employers',
+    path: '/for_employers',
+    name: 'for_employers',
     component: Carousel
   },
   {
-    path: '/sandbox',
-    name: 'sandbox',
-    component: Net
+    path: '/about_us',
+    name: 'about_us',
+    component: About
+  },
+  {
+    path: '/resources',
+    name: 'resources',
+    component: Resources
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory('/K40N45H1Q/WorkforcePlatform/'), // <--- совпадает с base
+  history: createWebHistory('/WorkforcePlatform/'),
   routes,
 })
 

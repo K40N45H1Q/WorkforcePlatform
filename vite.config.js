@@ -9,7 +9,7 @@ export default defineConfig({
     vue(),
   ],
 
-  base: '/K40N45H1Q/WorkforcePlatform/',
+  base: '/WorkforcePlatform/',
 
   server: {
     allowedHosts: true

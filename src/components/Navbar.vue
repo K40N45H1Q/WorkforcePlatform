@@ -91,8 +91,8 @@ const isMenuOpen = ref(false)
 
 const links = [
   { text: 'For workers', to: '/' },
-  { text: 'For employers', to: '/employers' },
-  { text: 'About us', to: '/about' },
+  { text: 'For employers', to: '/for_employers' },
+  { text: 'About us', to: '/about_us' },
   { text: 'Resources', to: '/resources' },
 ]
 
