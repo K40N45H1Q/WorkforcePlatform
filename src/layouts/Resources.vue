@@ -1,9 +1,8 @@
 <template>
     <div>
-        <h1>NO CONTENT</h1>
+        <Ticker />
     </div>
 </template>
-
 
 <style scoped>
 div {
@@ -13,10 +12,9 @@ div {
     justify-content: center;
     color: #00E676;
 }
-h1 {
-    padding: 7%;
-    opacity: 0.7;
-    font-size: clamp(34px, 5vw, 100px);
-    
-}
 </style>
+
+<!-- Добавлено слово setup -->
+<script setup>
+import Ticker from '@/components/Ticker.vue';
+</script>

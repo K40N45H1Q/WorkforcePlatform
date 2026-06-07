@@ -129,7 +129,7 @@
   color: var(--color-accent);
   padding: 8px 16px;
   border-radius: 100px;
-  font-size: clamp(11px, 2vw, 15px);;
+  font-size: clamp(11px, 2vw, 15px);
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;

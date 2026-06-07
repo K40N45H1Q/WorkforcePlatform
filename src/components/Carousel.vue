@@ -129,7 +129,6 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
   --z-offset: -24rem;
   --x-offset: -5rem;
   --blur-size: 1rem;
-  
   --card-bg: #161B22;
   --text: #ffffff;
   --accent: #00E676;
@@ -159,7 +158,7 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
   width: 100%;
   height: 100%;
   padding: clamp(1rem, 4vw, 1rem);
-  background: rgba(10, 10, 10, 1);
+  background: rgba(10, 10, 10, 0.7);
   border-radius: clamp(0.75rem, 2vw, 1rem);
   color: var(--text);
   display: flex;
