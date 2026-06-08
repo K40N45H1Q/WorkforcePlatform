@@ -296,7 +296,7 @@ watch(isMenuOpen, (isOpen) => {
     right: 0;
     width: 85vw;
     max-width: 320px;
-    height: 100vh;
+    height: 100%;
     background: rgba(0, 0, 0, 0.9);
     border-left: 1px solid var(--border);
     padding: 100px 24px 32px;
@@ -305,7 +305,7 @@ watch(isMenuOpen, (isOpen) => {
     transition: transform 0.37s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
     z-index: 50;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .nav-mobile.active {
