@@ -102,7 +102,7 @@
 <style scoped>
 .home {
   width: 100%;
-  min-height: 100%;
+  min-height: calc(100% - 80px);
   background-color: transparent;
   color: var(--color-text);
   position: relative;
