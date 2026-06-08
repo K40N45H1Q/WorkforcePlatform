@@ -25,7 +25,7 @@
         </button>
 
         <RouterLink to="/signin" class="link">
-          <button class="btn btn-primary" aria-label="Войти в аккаунт">
+          <button class="btn" aria-label="Войти в аккаунт">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
               <polyline points="10,17 15,12 10,7" />
@@ -65,7 +65,7 @@
       </RouterLink>
 
       <div class="mobile-actions">
-        <button class="btn btn-ghost" @click="closeMenu">
+        <button class="btn" @click="closeMenu">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10" />
             <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -123,7 +123,7 @@ watch(isMenuOpen, (isOpen) => {
   --h: 80px;
 
   height: var(--h);
-  background: var(--alpha-background);
+  background: var(--background-transparent);
   color: var(--text);
   position: relative;
   z-index: 50;
@@ -156,6 +156,10 @@ watch(isMenuOpen, (isOpen) => {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   shape-rendering: geometricPrecision;
+}
+
+.logo-icon:hover {
+  filter: drop-shadow(0 0 15px var(--accent-transparent))
 }
 
 .nav-actions {
@@ -298,7 +302,7 @@ watch(isMenuOpen, (isOpen) => {
     padding: 100px 24px 32px;
     gap: 0;
     transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.37s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
     z-index: 50;
     overflow-y: auto;
@@ -316,14 +320,6 @@ watch(isMenuOpen, (isOpen) => {
     font-weight: 500;
     padding: 16px 0;
     border-bottom: 1px solid var(--border);
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s;
-  }
-
-  .nav-mobile.active .nav-link-mobile {
-    opacity: 1;
-    transform: translateX(0);
   }
 
   .nav-link-mobile:hover,

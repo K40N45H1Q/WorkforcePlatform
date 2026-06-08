@@ -158,7 +158,7 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
   width: 100%;
   height: 100%;
   padding: clamp(1rem, 4vw, 1rem);
-  background: rgba(10, 10, 10, 0.7);
+  background: rgba(10, 10, 10, 0.95);
   border-radius: clamp(0.75rem, 2vw, 1rem);
   color: var(--text);
   display: flex;
@@ -168,6 +168,7 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
   border: solid 2px rgba(0, 230, 119, 0.9);
   box-shadow: 0px 0px 15px 5px rgba(0, 230, 119, 0.15);
   box-sizing: border-box;
+
 }
 
 .card-content {

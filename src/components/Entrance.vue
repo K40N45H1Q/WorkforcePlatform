@@ -27,7 +27,7 @@
         </button>
       </div>
 
-      <button type="submit" class="btn">
+      <button type="submit" class="btn btn-primary">
         Sign in
       </button>
 
@@ -64,16 +64,16 @@ const submit = () => {
   padding: 28px;
   border-radius: 16px;
 
-  background: rgba(10, 10, 10, 0.7);
+  background: var(--background-transparent);
   border: 1px solid rgba(255, 255, 255, 0.06);
 
-  backdrop-filter: blur(10px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 
   display: grid;
-  gap: 14px;
+  gap: 20px;
   border: solid 2px rgba(0, 230, 119, 0.9);
   box-shadow: 0px 0px 15px 5px rgba(0, 230, 119, 0.15);
+
 }
 
 .title {
@@ -91,7 +91,7 @@ const submit = () => {
 
   border-radius: 10px;
   border: 1px solid rgba(0, 230, 119, 0.3);
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--background-transparent);
 
   color: #e5e7eb;
   outline: none;

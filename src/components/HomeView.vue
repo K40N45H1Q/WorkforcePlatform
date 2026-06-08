@@ -210,22 +210,8 @@
   outline-offset: 2px;
 }
 
-.btn:active {
-  transform: translateY(1px);
-}
-
-.btn-primary {
-  background: linear-gradient(180deg, #00E676 0%, #00C853 100%);
-  color: #0a0a0a;
-  box-shadow: 0 4px 20px rgba(0, 230, 118, 0.2);
-}
-
-.btn-primary:hover {
-  box-shadow: 0 8px 30px rgba(0, 230, 119, 0.3);
-}
-
 .btn-ghost {
-  background: var(--color-bg) !important;
+  background: var(--background) !important;
   color: var(--color-text);
   border: 2px solid rgba(0, 230, 119, 0.3) !important;
 }
