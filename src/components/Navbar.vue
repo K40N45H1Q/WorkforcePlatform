@@ -336,8 +336,8 @@ watch(isMenuOpen, (isOpen) => {
   }
 
   .mobile-actions {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
     margin-top: auto;
     padding-top: 24px;
