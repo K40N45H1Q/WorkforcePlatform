@@ -4,6 +4,7 @@ import Carousel from './components/Carousel.vue'
 import About from './layouts/About.vue'
 import Resources from './layouts/Resources.vue'
 import Entrance from './components/Entrance.vue'
+import Registration from './components/Registration.vue'
 
 const routes = [
   {
@@ -30,7 +31,13 @@ const routes = [
     path: '/signin',
     name: 'signin',
     component: Entrance
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: Registration
   }
+
 ]
 
 const router = createRouter({
