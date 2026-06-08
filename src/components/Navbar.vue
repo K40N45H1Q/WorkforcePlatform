@@ -24,14 +24,16 @@
           <span>EN</span>
         </button>
 
-        <button class="btn btn-primary" aria-label="Войти в аккаунт">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-            <polyline points="10,17 15,12 10,7" />
-            <line x1="15" y1="12" x2="3" y2="12" />
-          </svg>
-          Sign in
-        </button>
+        <RouterLink to="/signin" class="link">
+          <button class="btn btn-primary" aria-label="Войти в аккаунт">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10,17 15,12 10,7" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+            </svg>
+            Sign in
+          </button>
+        </RouterLink>
       </div>
 
       <button
@@ -70,14 +72,16 @@
           </svg>
           EN
         </button>
-        <button class="btn btn-primary" @click="closeMenu">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-            <polyline points="10,17 15,12 10,7" />
-            <line x1="15" y1="12" x2="3" y2="12" />
-          </svg>
-          Sign in
-        </button>
+         <RouterLink to="/signin" class="link">
+           <button class="btn btn-primary" @click="closeMenu">
+             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+               <polyline points="10,17 15,12 10,7" />
+               <line x1="15" y1="12" x2="3" y2="12" />
+             </svg>
+             Sign in
+           </button>
+         </RouterLink>
       </div>
     </div>
   </nav>
@@ -199,29 +203,6 @@ watch(isMenuOpen, (isOpen) => {
 
 .nav-link-active::after {
   transform: scaleX(1);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border: 1px solid rgba(0, 230, 119, 0.3);
-  background: transparent;
-  color: var(--text);
-  white-space: nowrap;
-}
-
-.btn:hover {
-  border-color: var(--accent);
-  background: rgba(0, 230, 119, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 230, 119, 0.25);
 }
 
 .btn .icon {

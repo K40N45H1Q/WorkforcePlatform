@@ -3,6 +3,7 @@ import HomeView from './components/HomeView.vue'
 import Carousel from './components/Carousel.vue'
 import About from './layouts/About.vue'
 import Resources from './layouts/Resources.vue'
+import Entrance from './components/Entrance.vue'
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     name: 'resources',
     component: Resources
   },
+  {
+    path: '/signin',
+    name: 'signin',
+    component: Entrance
+  }
 ]
 
 const router = createRouter({
