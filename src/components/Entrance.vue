@@ -78,10 +78,11 @@ const submit = () => {
 
 .title {
   margin: 0 0 6px;
-  font-size: 22px;
+  font-size: clamp(15px, 2vw, 22px);
   font-weight: 600;
   color: #e5e7eb;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 .input {
