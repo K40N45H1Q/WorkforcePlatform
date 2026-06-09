@@ -42,15 +42,12 @@
         @click="toggleMenu"
         :aria-expanded="isMenuOpen"
         aria-controls="mobile-menu"
-        aria-label="Открыть меню"
       >
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
-
-    <div class="backdrop" :class="{ active: isMenuOpen }" @click="closeMenu"></div>
 
     <div id="mobile-menu" class="nav-mobile" :class="{ active: isMenuOpen }">
       <RouterLink
@@ -109,8 +106,12 @@ const closeMenu = () => {
 }
 
 watch(isMenuOpen, (isOpen) => {
-  document.body.style.overflow = isOpen ? 'hidden' : ''
-})
+  const value = isOpen ? 'hidden' : '';
+
+  document.documentElement.style.setProperty('overflow', value, 'important');
+  document.body.style.setProperty('overflow', value, 'important');
+});
+
 </script>
 
 <style scoped>
@@ -256,6 +257,11 @@ watch(isMenuOpen, (isOpen) => {
     background: var(--accent);
     border-radius: 2px;
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hamburger.active {
+    position: fixed !important;
+    right: 15px;
   }
 
   .hamburger.active span:nth-child(1) {

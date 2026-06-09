@@ -106,7 +106,6 @@
   background-color: transparent;
   color: var(--color-text);
   position: relative;
-  overflow-x: hidden;
 }
 
 .hero {
