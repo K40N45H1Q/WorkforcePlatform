@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="Главная навигация">
+  <nav class="navbar" role="navigation">
     <div class="container">
-      <RouterLink to="/" class="logo" aria-label="На главную">
+      <RouterLink to="/" class="logo">
         <img src="/logo.svg" alt="Logo" class="logo-icon" />
       </RouterLink>
 
@@ -16,7 +16,7 @@
           {{ link.text }}
         </RouterLink>
 
-        <button class="btn btn-ghost" aria-label="Выбрать язык">
+        <button class="btn btn-ghost"">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10" />
             <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -25,7 +25,7 @@
         </button>
 
         <RouterLink to="/signin" class="link">
-          <button class="btn" aria-label="Войти в аккаунт">
+          <button class="btn">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
               <polyline points="10,17 15,12 10,7" />
@@ -211,8 +211,8 @@ watch(isMenuOpen, (isOpen) => {
 }
 
 .btn .icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   opacity: 0.8;
   flex-shrink: 0;
 }

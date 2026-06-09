@@ -5,6 +5,7 @@ import About from './layouts/About.vue'
 import Resources from './layouts/Resources.vue'
 import Entrance from './components/Entrance.vue'
 import Registration from './components/Registration.vue'
+import Search from './components/Search.vue'
 
 const routes = [
   {
@@ -36,7 +37,12 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: Registration
-  }
+  },
+  {
+    path: '/offers',
+    name: 'offers',
+    component: Search
+  },
 
 ]
 

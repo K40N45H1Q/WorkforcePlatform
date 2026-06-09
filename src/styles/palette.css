@@ -1,7 +1,15 @@
 :root {
     --accent: #00E676;
-    --accent-transparent: rgba(0, 230, 119, 0.5);
+    --accent-transparent: rgba(0, 230, 119, 0.4);
+    --silent-accent: rgba(0, 230, 119, 0.07);
 
     --background: #0a0a0a;
+    --card: rgba(13, 17, 23, 0.9);
     --background-transparent: rgba(10, 10, 10, 0.95);
+
+    --glow: 0 0px 10px var(--accent-transparent);
+
+    --text: #EDE9FE;
+    --text-muted: #a0a0a0;
+
 }

@@ -20,13 +20,16 @@
         </p>
 
         <div class="hero-actions" role="group" aria-label="Primary actions">
-          <button class="btn btn-primary">
-            I'm looking for work
-            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </button>
+          <RouterLink to="/offers">
+            <button class="btn btn-primary">
+              I'm looking for work
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+          </RouterLink>
+
           <RouterLink to="/for_employers" custom v-slot="{ navigate }">
             <button class="btn btn-ghost" @click="navigate">
               I'm hiring workers
@@ -252,7 +255,7 @@
 }
 
 .stat-item:hover {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: var(--silent-accent);
 }
 
 .stat-icon-wrapper {
